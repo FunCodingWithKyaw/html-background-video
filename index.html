@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Project 1</title>
+
+	<style>
+		
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.txt-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 2;
+		}
+
+		.call-it {
+			position: absolute;
+			width: 90%;
+			height: 100vh;
+			padding: 20px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.menu-level {
+			height: 100px;
+		}
+
+		.menu-level .menu-title {
+			float: left;
+		}
+
+		.menu-level .menu-bar {
+			float: right;
+		}
+
+		.main-title-level {
+			width: 500px;
+			margin-top: 10%;
+		}
+
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.menu-items {
+			position: absolute;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(44, 123, 197, 0.9);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 3;
+			transition: 0.7s ease;
+		}
+
+		.menu-items.active {
+			transition: 0.7s ease;
+			top: 0%;
+		}
+
+		.menu-bar:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+			transition: 0.4s ease;
+		}
+
+		.close-bar {
+			top: 20px;
+			position: absolute;
+			right: 7%;
+		}
+
+		.close-bar:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+			transition: 0.4s ease;
+		}
+
+		.main-button {
+			padding: 30px 0;
+		}
+
+		.main-button .btn-group {
+			text-decoration: none;
+			display: inline-block;
+			width: 75px;
+			height: 75px;
+			padding: 27px 0;
+			margin: 0 10px;
+			text-align: center;
+			border: none;
+			outline: none;
+			border-radius: 50%;
+			background-color: white;
+			color: black;
+		}
+
+		.main-button .btn-fb {
+			color: white;
+			background-color: #3f51b5;
+		}
+
+		.main-button .btn-gb {
+			color: white;
+			background-color: #323131;
+		}
+
+		.main-button .btn-tw {
+			color: white;
+			background-color: #017bff;
+		}
+
+		.menu-title {
+			margin-left: 10px;
+			font-size: 40px;
+			color: white;
+			font-weight: bold;
+			font-family: Arial, Helvetica, sans-serif;
+			letter-spacing: 10px;
+		}
+
+		.main-title-level h1 {
+			margin-left: 10px;
+			font-size: 40px;
+			color: white;
+			font-weight: bold;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			letter-spacing: 10px;
+		}
+
+		.main-title-level p {
+			margin-left: 10px;
+			margin-top: 20px;
+			font-size: 20px;
+			line-height: 34px;
+			color: white;
+			font-weight: bold;
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		}
+
+		.menu-item-group ul {
+			list-style-type: none;
+		}
+
+		.menu-item-group li {
+			width: 100%;
+			padding: 20px 0;
+			text-decoration-color: white;
+		}
+
+		.menu-item-group li a {
+			text-decoration: none;
+			font-size: 18px;
+			color: white;
+			font-wegith: bold;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		.menu-item-group li:hover {
+			cursor: pointer;
+			text-decoration: underline;
+			text-decoration-color: white;
+			transform: scale(1.1);
+			transition: 0.5s ease;
+		}
+
+		@media(max-width: 500px) {
+			.main-title-level {
+				width: 100%;
+			}
+
+			.main-button .btn-group {
+				width: 70px;
+				height: 70px;
+				margin: 0 3px;
+			}
+
+			.close-bar {
+				top: 20px;
+				right: 10%;
+			}
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="wrapper">
+		
+		<div class="menu-items">
+			<div class="close-bar" id="close-menu">
+				<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+				width="30" height="30"
+				viewBox="0 0 172 172"
+				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M26.5525,21.6075l-4.945,4.945l59.4475,59.4475l-59.4475,59.4475l4.945,4.945l59.4475,-59.4475l59.4475,59.4475l4.945,-4.945l-59.4475,-59.4475l59.4475,-59.4475l-4.945,-4.945l-59.4475,59.4475z"></path></g></g></svg>
+			</div>
+			<div class="menu-item-group">
+				<ul>
+					<li><a href="#">Life</a></li>
+					<li><a href="#">Peace</a></li>
+					<li><a href="#">Plan</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="txt-overlay">
+			<div class="call-it">
+				<div class="menu-level">
+					<div class="menu-title">
+						LIFE
+					</div>
+					<div class="menu-bar" id="bar">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="30" height="30"
+						viewBox="0 0 172 172"
+						style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M0,30.96v6.88h172v-6.88zM0,82.56v6.88h172v-6.88zM0,134.16v6.88h172v-6.88z"></path></g></g></svg>
+					</div>
+				</div>
+
+
+				<div class="main-title-level">
+					<h1>Explore</h1>
+					<h1>Your Life...</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					</p>
+
+					<div class="main-button">
+						<a href="#" class="btn-group btn-fb">Fb</a>
+						<a href="#" class="btn-group btn-gb">Github</a>
+						<a href="#" class="btn-group btn-tw">Twitter</a>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<video src="video.mp4" preload="true" loop autoplay muted></video>
+
+</body>
+</html>
+
+
+<script>
+	
+	var bar = document.querySelector('#bar')
+
+	var close_bar = document.querySelector('#close-menu')
+
+	var menu = document.querySelector('.menu-items')
+
+	bar.addEventListener('click', () => {
+		menu.classList.toggle('active')
+	})
+
+	close_bar.addEventListener('click', () => {
+		menu.classList.toggle('active')
+	})
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

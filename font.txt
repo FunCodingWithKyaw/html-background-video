@@ -1,0 +1,8 @@
+Arial, Helvetica, sans-serif;
+
+Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
